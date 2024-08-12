@@ -16,6 +16,7 @@ def git_clone(repo_url, destination):
     if not os.path.exists(destination):
         os.makedirs(destination)
     subprocess.run(["git", "clone", repo_url, destination])
+    shutil.rmtree(destination+"\\.git")
     print(f"[*] Cloned repository to {destination}")
 
 
@@ -35,13 +36,15 @@ def handle_add_option(base_path):
     app = os.path.join(base_path, "ui\\ui.py")
     shutil.copy(
         "C:\\Users\\Khuong\\Desktop\\create-framework\\resources\\ui.py", app)
+    app = os.path.join(base_path, "git.ps1")
+    shutil.copy(
+        "C:\\Users\\Khuong\\Desktop\\create-framework\\resources\\git.ps1", app)
 
 
 def main(base_path):
     libs_url = "https://github.com/npk-0709/Klib.git"
     libs_path = os.path.join(base_path, "Klib")
     git_clone(libs_url, libs_path)
-
 
     create_directory(os.path.join(base_path, "config"))
     create_directory(os.path.join(base_path, "app"))
