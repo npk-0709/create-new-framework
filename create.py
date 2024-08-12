@@ -71,6 +71,8 @@ def main(base_path):
     handle_add_option(base_path)
 
     print(f"[*] Project are created success !")
+    print(f"[*] Open VsCode !")
+    subprocess.run(["code", base_path], check=True)
 
 
 def run(base_path, type_create):
