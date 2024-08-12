@@ -3,9 +3,9 @@ $directoryName = $currentDirectory.Name
 
 git init
 
-gh repo create [FNAME] --private --source=. --remote=origin
+gh repo create $directoryName --private --source=. --remote=origin
 
-Remove-Item -Path $directoryName -Recurse -Force
+Remove-Item -Path "Klib\.git" -Recurse -Force
 
 git add .
 

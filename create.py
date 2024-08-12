@@ -70,11 +70,13 @@ def main(base_path):
 
     handle_add_option(base_path)
 
+    print(f"[*] Project are created success !")
+
 
 def run(base_path, type_create):
     if type_create == 1:
         main(base_path)
-    if not os.path.exists(base_path) and type_create == 2:
+    elif not os.path.exists(base_path) and type_create == 2:
         create_directory(base_path)
         main(base_path)
     else:
