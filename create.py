@@ -56,7 +56,7 @@ def handle_add_option(base_path):
         "C:\\Users\\Khuong\\Desktop\\create-framework\\resources\\start.ps1", app)
 
 
-def main(base_path):
+def main(base_path, project_name):
     libs_url = "https://github.com/npk-0709/Klib.git"
     libs_path = os.path.join(base_path, "Klib")
     git_clone(libs_url, libs_path)
@@ -72,26 +72,27 @@ def main(base_path):
 
     print(f"[*] Project are created success !")
     print(f"[*] Open VsCode !")
-    subprocess.run(["code", base_path], check=True)
+    subprocess.run(["C:\\Users\\Khuong\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe", base_path], check=True)
 
 
-def run(base_path, type_create):
+def run(base_path, type_create,project_name):
     if type_create == 1:
-        main(base_path)
+        main(base_path,project_name)
     elif not os.path.exists(base_path) and type_create == 2:
         create_directory(base_path)
-        main(base_path)
+        main(base_path,project_name)
     else:
         print(f"[*] Project already exists")
 
 
 if __name__ == "__main__":
     if len(sys.argv) == 2 and sys.argv[1] == "start":
-        run(os.getcwd(), 1)
+        project_name = os.getcwd().split('\\')[-1]
+        run(os.getcwd(), 1, project_name)
     elif len(sys.argv) == 3 and sys.argv[1] == "start":
         project_name = sys.argv[2]
         base_path = os.path.join(os.getcwd(), project_name)
-        run(base_path, 2)
+        run(base_path, 2, project_name)
     else:
         print("Usage: khuong start [project_name]")
         sys.exit(1)
