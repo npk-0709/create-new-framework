@@ -20,11 +20,11 @@ def create_directory(path):
 
 
 def git_clone(repo_url, destination):
+    print(f"[*] Clone repository to {destination}")
     if not os.path.exists(destination):
         os.makedirs(destination)
-    subprocess.run(["git", "clone", repo_url, destination])
-    shutil.rmtree(destination+"\\.git")
-    print(f"[*] Cloned repository to {destination}")
+    subprocess.run(["git", "clone", repo_url, destination], check=True)
+    print(f"[*] Cloned Success repository to {destination}")
 
 
 def create_file(file_path, content):
