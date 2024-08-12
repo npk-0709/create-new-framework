@@ -35,17 +35,25 @@ def create_file(file_path, content):
 
 def handle_add_option(base_path):
     app = os.path.join(base_path, "app.py")
+    print(f"[*] Copy file: {app}")
     shutil.copy(
         "C:\\Users\\Khuong\\Desktop\\create-framework\\resources\\app.py", app)
     app = os.path.join(base_path, "core.py")
+    print(f"[*] Copy file: {app}")
     shutil.copy(
         "C:\\Users\\Khuong\\Desktop\\create-framework\\resources\\core.py", app)
     app = os.path.join(base_path, "ui\\ui.py")
+    print(f"[*] Copy file: {app}")
     shutil.copy(
         "C:\\Users\\Khuong\\Desktop\\create-framework\\resources\\ui.py", app)
     app = os.path.join(base_path, "git.ps1")
+    print(f"[*] Copy file: {app}")
     shutil.copy(
         "C:\\Users\\Khuong\\Desktop\\create-framework\\resources\\git.ps1", app)
+    app = os.path.join(base_path, "start.ps1")
+    print(f"[*] Copy file: {app}")
+    shutil.copy(
+        "C:\\Users\\Khuong\\Desktop\\create-framework\\resources\\start.ps1", app)
 
 
 def main(base_path):
