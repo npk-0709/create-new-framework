@@ -65,22 +65,26 @@ def main(base_path, project_name):
     create_directory(os.path.join(base_path, "app"))
     create_directory(os.path.join(base_path, "ui"))
     create_directory(os.path.join(base_path, "resources"))
-    create_directory(os.path.join(base_path, "router"))
-    create_directory(os.path.join(base_path, "controller"))
+    create_directory(os.path.join(base_path, "resources\\images"))
+    create_directory(os.path.join(base_path, "resources\\database"))
+    create_directory(os.path.join(base_path, "modules"))
+    # create_directory(os.path.join(base_path, "router"))
+    # create_directory(os.path.join(base_path, "controller"))
 
     handle_add_option(base_path)
 
     print(f"[*] Project are created success !")
     print(f"[*] Open VsCode !")
-    subprocess.run(["C:\\Users\\Khuong\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe", base_path], check=True)
+    subprocess.run(
+        ["C:\\Users\\Khuong\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe", base_path], check=True)
 
 
-def run(base_path, type_create,project_name):
+def run(base_path, type_create, project_name):
     if type_create == 1:
-        main(base_path,project_name)
+        main(base_path, project_name)
     elif not os.path.exists(base_path) and type_create == 2:
         create_directory(base_path)
-        main(base_path,project_name)
+        main(base_path, project_name)
     else:
         print(f"[*] Project already exists")
 
