@@ -10,6 +10,8 @@ import subprocess
 import sys
 import shutil
 
+MAIN_DIR = "C:\\Users\\Khuong\\Desktop\\create-framework"
+
 
 def create_directory(path):
     if not os.path.exists(path):
@@ -37,23 +39,45 @@ def handle_add_option(base_path):
     app = os.path.join(base_path, "app.py")
     print(f"[*] Copy file: {app}")
     shutil.copy(
-        "C:\\Users\\Khuong\\Desktop\\create-framework\\resources\\app.py", app)
+        MAIN_DIR+"\\resources\\app.py", app)
     app = os.path.join(base_path, "core.py")
     print(f"[*] Copy file: {app}")
     shutil.copy(
-        "C:\\Users\\Khuong\\Desktop\\create-framework\\resources\\core.py", app)
+        MAIN_DIR+"\\resources\\core.py", app)
     app = os.path.join(base_path, "ui\\ui.py")
     print(f"[*] Copy file: {app}")
     shutil.copy(
-        "C:\\Users\\Khuong\\Desktop\\create-framework\\resources\\ui.py", app)
+        MAIN_DIR+"\\resources\\ui.py", app)
     app = os.path.join(base_path, "git.ps1")
     print(f"[*] Copy file: {app}")
     shutil.copy(
-        "C:\\Users\\Khuong\\Desktop\\create-framework\\resources\\git.ps1", app)
+        MAIN_DIR+"\\resources\\git.ps1", app)
+
     app = os.path.join(base_path, "start.ps1")
     print(f"[*] Copy file: {app}")
     shutil.copy(
-        "C:\\Users\\Khuong\\Desktop\\create-framework\\resources\\start.ps1", app)
+        MAIN_DIR+"\\resources\\start.ps1", app)
+
+    # app = os.path.join(base_path, "\\resources\\image\\ui\\start.png")
+    # print(f"[*] Copy file: {app}")
+    # shutil.copy(
+    #     MAIN_DIR+"\\resources\\image\\start.png", app)
+    # app = os.path.join(base_path, "\\resources\\image\\ui\\start.png")
+    # print(f"[*] Copy file: {app}")
+    # shutil.copy(
+    #     MAIN_DIR+"\\resources\\image\\start.png", app)
+    # app = os.path.join(base_path, "\\resources\\image\\ui\\start.png")
+    # print(f"[*] Copy file: {app}")
+    # shutil.copy(
+    #     MAIN_DIR+"\\resources\\image\\start.png", app)
+    # app = os.path.join(base_path, "\\resources\\image\\ui\\start.png")
+    # print(f"[*] Copy file: {app}")
+    # shutil.copy(
+    #     MAIN_DIR+"\\resources\\image\\start.png", app)
+    # app = os.path.join(base_path, "\\resources\\image\\ui\\start.png")
+    # print(f"[*] Copy file: {app}")
+    # shutil.copy(
+    #     MAIN_DIR+"\\resources\\image\\start.png", app)
 
 
 def main(base_path, project_name):
@@ -65,7 +89,8 @@ def main(base_path, project_name):
     create_directory(os.path.join(base_path, "app"))
     create_directory(os.path.join(base_path, "ui"))
     create_directory(os.path.join(base_path, "resources"))
-    create_directory(os.path.join(base_path, "resources\\images"))
+    create_directory(os.path.join(base_path, "resources\\image"))
+    create_directory(os.path.join(base_path, "resources\\image\\ui"))
     create_directory(os.path.join(base_path, "resources\\database"))
     create_directory(os.path.join(base_path, "modules"))
     # create_directory(os.path.join(base_path, "router"))
