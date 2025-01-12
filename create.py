@@ -36,48 +36,65 @@ def create_file(file_path, content):
 
 
 def handle_add_option(base_path):
+    RESOURCES_DIR = MAIN_DIR+"\\resources"
+    IMAGES_DIR = MAIN_DIR+"\\resources\\image"
+    # copy main files
     app = os.path.join(base_path, "app.py")
     print(f"[*] Copy file: {app}")
     shutil.copy(
-        MAIN_DIR+"\\resources\\app.py", app)
+        RESOURCES_DIR+"\\app.py", app)
     app = os.path.join(base_path, "core.py")
     print(f"[*] Copy file: {app}")
     shutil.copy(
-        MAIN_DIR+"\\resources\\core.py", app)
+        RESOURCES_DIR+"\\core.py", app)
     app = os.path.join(base_path, "ui\\ui.py")
     print(f"[*] Copy file: {app}")
     shutil.copy(
-        MAIN_DIR+"\\resources\\ui.py", app)
-    app = os.path.join(base_path, "git.ps1")
+        RESOURCES_DIR+"\\ui.py", app)
+    app = os.path.join(base_path, "gitstart.ps1")
+    print(f"[*] Copy file: {app}")
+    shutil.copy(RESOURCES_DIR+"\\gitstart.ps1", app)
+
+    # copy images
+    app = os.path.join(
+        IMAGES_DIR, "ui\\go-down-symbolic.symbolic.png")
     print(f"[*] Copy file: {app}")
     shutil.copy(
-        MAIN_DIR+"\\resources\\git.ps1", app)
+        IMAGES_DIR+"\\ui\\go-down-symbolic.symbolic.png", app)
 
-    app = os.path.join(base_path, "start.ps1")
+    app = os.path.join(
+        IMAGES_DIR, "ui\\go-next-symbolic.symbolic.png")
     print(f"[*] Copy file: {app}")
     shutil.copy(
-        MAIN_DIR+"\\resources\\start.ps1", app)
+        IMAGES_DIR+"\\ui\\go-next-symbolic.symbolic.png", app)
 
-    # app = os.path.join(base_path, "\\resources\\image\\ui\\start.png")
-    # print(f"[*] Copy file: {app}")
-    # shutil.copy(
-    #     MAIN_DIR+"\\resources\\image\\start.png", app)
-    # app = os.path.join(base_path, "\\resources\\image\\ui\\start.png")
-    # print(f"[*] Copy file: {app}")
-    # shutil.copy(
-    #     MAIN_DIR+"\\resources\\image\\start.png", app)
-    # app = os.path.join(base_path, "\\resources\\image\\ui\\start.png")
-    # print(f"[*] Copy file: {app}")
-    # shutil.copy(
-    #     MAIN_DIR+"\\resources\\image\\start.png", app)
-    # app = os.path.join(base_path, "\\resources\\image\\ui\\start.png")
-    # print(f"[*] Copy file: {app}")
-    # shutil.copy(
-    #     MAIN_DIR+"\\resources\\image\\start.png", app)
-    # app = os.path.join(base_path, "\\resources\\image\\ui\\start.png")
-    # print(f"[*] Copy file: {app}")
-    # shutil.copy(
-    #     MAIN_DIR+"\\resources\\image\\start.png", app)
+    app = os.path.join(
+        IMAGES_DIR, "ui\\go-previous-symbolic.symbolic.png")
+    print(f"[*] Copy file: {app}")
+    shutil.copy(
+        IMAGES_DIR+"\\ui\\go-previous-symbolic.symbolic.png", app)
+
+    app = os.path.join(
+        IMAGES_DIR, "ui\\go-up-symbolic.symbolic.png")
+    print(f"[*] Copy file: {app}")
+    shutil.copy(
+        IMAGES_DIR+"\\ui\\go-up-symbolic.symbolic.png", app)
+
+    app = os.path.join(
+        IMAGES_DIR, "ui\\object-select-symbolic.symbolic.png")
+    print(f"[*] Copy file: {app}")
+    shutil.copy(
+        IMAGES_DIR+"\\ui\\object-select-symbolic.symbolic.png", app)
+
+    app = os.path.join(IMAGES_DIR, "ui\\start.png")
+    print(f"[*] Copy file: {app}")
+    shutil.copy(
+        IMAGES_DIR+"\\ui\\start.png", app)
+
+    app = os.path.join(IMAGES_DIR, "logo\\logo.ico")
+    print(f"[*] Copy file: {app}")
+    shutil.copy(
+        IMAGES_DIR+"\\logo\\logo.ico", app)
 
 
 def main(base_path, project_name):
@@ -91,6 +108,8 @@ def main(base_path, project_name):
     create_directory(os.path.join(base_path, "resources"))
     create_directory(os.path.join(base_path, "resources\\image"))
     create_directory(os.path.join(base_path, "resources\\image\\ui"))
+    create_directory(os.path.join(base_path, "resources\\image\\logo"))
+    create_directory(os.path.join(base_path, "resources\\image\\icon"))
     create_directory(os.path.join(base_path, "resources\\database"))
     create_directory(os.path.join(base_path, "modules"))
     # create_directory(os.path.join(base_path, "router"))
